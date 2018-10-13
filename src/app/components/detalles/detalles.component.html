@@ -15,9 +15,18 @@
                      <div *ngFor="let evo of pk.evolutions">
                         
                         <h4>Evoluciones: {{evo.to}}</h4>
-                        <!-- <img src="" alt="Evolucion" style="width:100%"> -->
+                        <div *ngFor="let im of pokemons ">
+                            <div *ngIf="im._id==evo._id">
+                                    <img src="{{ im.art_url }}" alt="Evolucion" style="width:100px">
+                            </div>
+                            
+                        </div>
+                        
                         <br><br>
-                        <p>Nivel en el que evoluciona: {{evo.level}}</p>
+                        <div *ngIf="evo.level!=null">
+                            <p>Nivel en el que evoluciona: {{evo.level}}</p>
+                        </div>
+                        
                         <p>Metodo de Evolucion: {{evo.method}}</p>
 
                      </div>
