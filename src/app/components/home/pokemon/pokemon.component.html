@@ -1,0 +1,21 @@
+<br><br>
+<div class="row">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-10">
+    <!-- en el row va el ngfor -->
+      <div class="row"  >
+          <div class="col-sm-3" *ngFor="let pk of pokemons "> 
+              <div class="card" style="width:90%; height: 90%;">
+                  <img class="card-img-top" src="{{pk.art_url}}" alt="Card image" style="width:100%">
+                  <div class="card-body">
+                    <h4 class="card-title">No:{{pk.pkdx_id}}  {{pk.name}}</h4>
+                    <a  (click)="Pasarid(pk.pkdx_id)"  routerLink = "/detalles" routerLinkActive= "active" class="btn btn-primary" >Detalles</a>
+                  </div>
+                </div>
+          </div>
+      </div>
+      <br><br>  
+  </div>
+  <div class="col-sm-1"></div>
+</div>
